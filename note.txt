@@ -1,3 +1,5 @@
+SOURCE_Kaggle: https://www.kaggle.com/datasets/blastchar/telco-customer-churn/data
+
 # Trước optimize:
 Precision: 0.53
 Recall: 0.84
