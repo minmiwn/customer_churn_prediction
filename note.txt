@@ -1,0 +1,37 @@
+# Trước optimize:
+Precision: 0.53
+Recall: 0.84
+F1: 0.65
+# Sau optimize:
+Precision: 0.57 ⬆️
+Recall: 0.78 ⬇️
+F1: 0.66 ⬆️
+-> trade-off
+Precision: “Trong những người mình dự đoán churn → bao nhiêu người thật sự churn?”
+Precision = 0.57:
+prediction 100 ppl:
+57 true
+43 false
+Recall: “Trong tất cả người thực sự churn → mình bắt được bao nhiêu?”
+Recall = 0.78:
+100 người churn thật
+bắt được 78 người
+miss 22 người 
+F1: trung bình giữa Precision và Recall
+Dùng khi:
+muốn cân bằng cả 2
+Bài toán Churn quan tâm gì phụ thuộc Business (mục tiêu kinh doanh):
+# Case 1: Bạn muốn GIỮ KHÁCH - RECALL
+✔️ Không được bỏ sót khách sắp churn
+❗ chấp nhận gọi nhầm
+→ dùng model 1
+# Case 2: Bạn muốn TIẾT KIỆM CHI PHÍ - PRECISION
+✔️ Gọi ít nhưng đúng người
+❗ không spam khách
+→ dùng model sau optimize
+⚖️ Case 3: Muốn cân bằng - dùng F1
+→ bạn đang làm đúng
+*** Thực tế churn:
+gọi khách tốn tiền ❌
+nhưng mất khách còn tốn hơn ❌❌
+nên: ưu tiên Recall (nhưng không quá thấp Precision)
